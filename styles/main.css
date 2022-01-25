@@ -5,8 +5,26 @@
 h1 {
     font-weight: 900;
     padding-top: 15px;
+    font-size: 60px;
 }
 
 h2{
-    font-weight:800
+    font-weight:800;
+    font-size: 45px;
+}
+.agents {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+}
+
+.agent-phoneNumber {
+    font-size: 30px;
+}
+.agent-companyName {
+    font-size: 30px;
+
+}
+
+.addressFullStreet {
+    font-size: 30px;
 }

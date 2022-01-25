@@ -1,14 +1,15 @@
 import { getBusinesses, newYorkCompanies, manufacturingCompanies } from "./database.js";
-import { businessHTML } from "./BusinessList.js";
+import { businessHTML, agents, agentHTML } from "./BusinessList.js";
+
 
 const mainTarget = document.querySelector('#container')
 const newYorkTarget = document.querySelector('.businessList--newYork')
 const manufacturingBusinessesTarget = document.querySelector('.businessList--manufacturing')
+const agentTarget = document.querySelector(".agents")
 
+const businessArray = getBusinesses()
 const businessList = () => {
-    const businessArray = getBusinesses()
     mainTarget.innerHTML = `<h1>Active Businesses</h1>`
-    //manufacturingBusinessesTarget.innerHTML = `<h1>Manufacturing Businesses</h1>`
 
     businessArray.forEach(
         (companyName) => {
@@ -42,3 +43,31 @@ const manufacturingBusinessList = () => {
 }
 const manufacturingApplicationHTML = manufacturingBusinessList()
 
+
+const agentsList = () => {
+    const agentsListArray = agents(businessArray)
+    agentTarget.innerHTML = `<h1>Purchasing Agents</h1>`
+
+    agentsListArray.forEach(
+        (fullName) => {
+            agentTarget.innerHTML += agentHTML(fullName)
+        }
+    )
+}
+const agentApplicationHTML = agentsList()
+
+
+/*
+
+const agentFunction = () => {
+    const agentsBusinessArray = agents()
+    agentTarget.innerHTML = `<h1>Purchasing Agents</h1>`
+
+    agentsBusinessArray.forEach(
+        (agentObject) => {
+            agentTarget.innerHTML += agentHTML(agentObject)
+        }
+    )
+}
+const agentApplicationHTML = agentFunction()
+*/ 
