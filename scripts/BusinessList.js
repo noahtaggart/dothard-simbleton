@@ -7,3 +7,30 @@ export const businessHTML = (company) => {
     </section>
     `
 }
+
+export const agents = (company) => {
+    const onlyAgents = company.map(agentObject => {
+        const newObject = {}
+            newObject.fullName = agentObject.purchasingAgent.nameFirst + ' ' + agentObject.purchasingAgent.nameLast
+            newObject.companyName = agentObject.companyName
+            newObject.phoneNumber = agentObject.phoneWork
+            return newObject
+        })
+    return onlyAgents
+}
+
+export const agentHTML = (agent) => {
+    let agentHTMLString = []
+        agentHTMLString += 
+        `
+        <section class='agents'>
+            <h2 class='agent-name'>${agent.fullName}</h2>
+            <div class='agent-companyName'>${agent.companyName}</div>
+            <div class='agent-phoneNumber'>${agent.phoneNumber}
+        </section><br>
+        `
+
+    ;
+
+    return agentHTMLString
+}
