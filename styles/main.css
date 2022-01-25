@@ -28,3 +28,9 @@ h2{
 .addressFullStreet {
     font-size: 30px;
 }
+.foundAgents {
+    padding-bottom: 10px;
+}
+.foundCompanies {
+    padding-bottom: 10px;
+}
